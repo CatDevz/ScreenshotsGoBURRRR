@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  hahascreenshotsgoburrrr-database:
+    image: 'mongo'
+    container_name: 'hahascreenshotsgoburrrr-database'
+    volumes:
+      - ./mongo-volume:/data/db
+  hahascreenshotsgoburrrr-server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    environment:
+      - MONGO_URI=mongodb://hahascreenshotsgoburrrr-database:27017/
+    ports:
+      - 6000:6000

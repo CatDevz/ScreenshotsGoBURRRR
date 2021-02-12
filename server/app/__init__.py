@@ -10,6 +10,9 @@ MONGO_CLIENT = pymongo.MongoClient(os.environ.get(
 MONGO_DB = MONGO_CLIENT['screenshots_go_burrrr']
 MONGO_COLLECTION = MONGO_DB['images']
 
+print(pymongo.MongoClient(os.environ.get(
+    'MONGO_URI', 'mongodb://localhost:27017/')))
+
 app = Flask(__name__)
 
 

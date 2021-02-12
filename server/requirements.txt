@@ -1,0 +1,4 @@
+pymongo
+exrex
+Flask
+gunicorn
